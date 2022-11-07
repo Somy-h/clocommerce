@@ -1,9 +1,9 @@
 import './categories.styles.scss'
 //import {categories} from './categories.json'
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home'
+import Home from './pages/Home'
 import Navigation from './components/navigation/navigation.component';
-import SignIn from './components/pages/SignIn'
+import Auth from './pages/auth'
 
 function App() {
 
@@ -48,7 +48,7 @@ function App() {
       <Route path='/' element={ <Navigation /> }>
         <Route index element={ <Home categories={categories}/> } />
         <Route path='shop' element={ <Shop /> } />
-        <Route path='sign-in' element={ <SignIn /> } />
+        <Route path='auth' element={ <Auth /> } />
       </Route>
     </Routes>
   );
