@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import {useState, useContext } from 'react';
 import './sign-up-form.styles.scss';
 import FormInput from '../form-input/form-input.component'
 import Button from '../button/button.component'
@@ -6,6 +6,7 @@ import {
   createUserDocumentFromAuth, 
   createAuthUserWithEmailAndPassword
 } from '../utils/firebase/firebase.utils'
+import { UserContext } from '../../contexts/user.context';
 
 const defaultFormData = {
   displayName: '',
@@ -18,6 +19,7 @@ export default function SignUpForm() {
 
   const [formData, setFormData] = useState(defaultFormData);
   const {displayName, email, password, confirmPassword} = formData;
+  const {setCurrentUser} = useContext(UserContext);
 
   const resetFormData = () => {
     setFormData(defaultFormData);
@@ -38,14 +40,17 @@ export default function SignUpForm() {
     }
 
     try {
-      const {user } = await createAuthUserWithEmailAndPassword(email, password)
+      const {user } = await createAuthUserWithEmailAndPassword(email, password);
+      setCurrentUser(user);
       
-      const userDocRef = await createUserDocumentFromAuth(user, {displayName})
+      const userDocRef = await createUserDocumentFromAuth(user, {displayName});
 
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('Cannot create user, email already in use');
-      } 
+      } else {
+        alert(error.message);
+      }
       console.log('user creation encountered error:' + error.message);
     }
     
@@ -53,7 +58,7 @@ export default function SignUpForm() {
 
   return (
     <div className='sign-up-container'>
-      <h2>Don't have an account?</h2>
+      <h2>I do not have a account</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput 
