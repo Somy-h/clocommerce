@@ -5,6 +5,7 @@ import Home from './pages/home.page'
 import Navigation from './components/navigation/navigation.component';
 import Auth from './pages/auth.page'
 import Shop from './pages/shop.page'
+import Checkout from './pages/checkout.page'
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
         <Route index element={ <Home categories={categories}/> } />
         <Route path='shop' element={ <Shop /> } />
         <Route path='auth' element={ <Auth /> } />
+        <Route path='checkout' element={ <Checkout />} />
       </Route>
     </Routes>
   );
