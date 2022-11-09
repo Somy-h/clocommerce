@@ -1,9 +1,10 @@
 import './categories.styles.scss'
 //import {categories} from './categories.json'
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home'
+import Home from './pages/home.page'
 import Navigation from './components/navigation/navigation.component';
-import Auth from './pages/auth'
+import Auth from './pages/auth.page'
+import Shop from './pages/shop.page'
 
 function App() {
 
@@ -35,12 +36,6 @@ function App() {
     }
   ]
 
-
-  
-
-  const Shop = () => {
-    return <h1>Shop page</h1>;
-  }
 
 
   return (
