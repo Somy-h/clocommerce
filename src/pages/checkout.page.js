@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import { CartContext } from "../contexts/cart.context";
 import CheckoutItem from '../components/checkout-item/checkout-item.component';
 
-const Checkout = () => {
+export default function Checkout()  {
   const { cartItems, cartTotal } = useContext(CartContext);
 
   return (
@@ -31,6 +31,4 @@ const Checkout = () => {
       <div className='total'>TOTAL: ${cartTotal}</div>
     </div>
   );
-
 }
-export default Checkout;
