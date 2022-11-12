@@ -11,7 +11,7 @@ import {createContext, useState, useEffect} from 'react';
 //----------
 
 //step3: Finally get data from the database instead of local json file.
-import {getCategoriesAndDocuments} from '../components/utils/firebase/firebase.utils'
+import {getCategoriesAndDocuments} from '../utils/firebase/firebase.utils'
 
 
 export const CategoriesContext = createContext({
@@ -42,7 +42,7 @@ export const CategoriesProvider = ({children}) => {
     getCategoriesMap();
   }, []);
 
-  const value = {categoriesMap}
+  const value = {categoriesMap};
   return (
     <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
   );

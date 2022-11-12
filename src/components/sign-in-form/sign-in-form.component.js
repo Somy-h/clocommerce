@@ -6,7 +6,7 @@ import {
   createUserDocumentFromAuth, 
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword
-} from '../../components/utils/firebase/firebase.utils'
+} from '../../utils/firebase/firebase.utils'
 
 
 const defaultFormData = {

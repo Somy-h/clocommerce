@@ -10,9 +10,9 @@ export default function Category() {
   const { categoriesMap } = useContext(CategoriesContext);
   const [ products, setProducts] = useState(categoriesMap[category]);
 
-  console.log(category);
+  //console.log(category);
   useEffect(() => {
-    console.log("category page useeffect")
+    //console.log("category page useeffect")
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 

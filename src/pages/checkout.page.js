@@ -25,6 +25,7 @@ export default function Checkout()  {
           <span>Remove</span>
         </div>
       </div>
+      
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}

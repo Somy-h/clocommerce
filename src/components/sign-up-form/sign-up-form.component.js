@@ -5,7 +5,7 @@ import Button from '../button/button.component'
 import { 
   createUserDocumentFromAuth, 
   createAuthUserWithEmailAndPassword
-} from '../utils/firebase/firebase.utils'
+} from '../../utils/firebase/firebase.utils'
 
 const defaultFormData = {
   displayName: '',
