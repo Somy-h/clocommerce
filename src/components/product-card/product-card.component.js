@@ -8,6 +8,7 @@ const ProductCard = ({product}) => {
   const {addToCart} = useContext(CartContext)
 
   const addCartHandler = () => {
+    console.log("add", product);
     addToCart(product);
   }
 

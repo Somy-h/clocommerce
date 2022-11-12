@@ -5,7 +5,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 const CartIcon = (props) => {
   const { cartItems, cartCount } = useContext(CartContext);
-  ;
+  console.log("cart count", cartCount);
 
   return (
     <div className = 'cart-icon-container' onClick={props.cartClickHandler}>

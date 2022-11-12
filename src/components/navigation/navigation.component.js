@@ -14,7 +14,7 @@ export default function Navigation() {
   const {isCartOpen, setIsCartOpen} = useContext(CartContext); 
 
   const cartClickHandler = () => {
-    setIsCartOpen (prevValue => !prevValue);
+    setIsCartOpen (!isCartOpen);
   }
 
   return (
@@ -30,9 +30,7 @@ export default function Navigation() {
               <span className='nav-link' onClick={signOutUser}>SIGN OUT</span>
             : <Link className='nav-link' to='/auth'>SIGN-IN</Link>
           }
-          {
-            currentUser ? <CartIcon cartClickHandler={cartClickHandler}/> : ''
-          }
+          <CartIcon cartClickHandler={cartClickHandler}/>
         </div>
         {isCartOpen && <CartDropdown />}
       </nav>
