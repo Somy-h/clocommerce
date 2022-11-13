@@ -1,10 +1,7 @@
 import './directory.styles.scss'
 import DirectoryItem from '../directory-item/directory-item.component'
 
-
-export default function Directory() {
-
-  const categories = [
+const categories = [
     {
       id: 1,
       title: 'hats',
@@ -35,8 +32,9 @@ export default function Directory() {
       imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
       route: 'shop/mens'
     }
-  ]
+]
 
+export default function Directory() {
   return (
     <div className='directory-container'>
       {categories.map(category => (

@@ -56,7 +56,7 @@ export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
     batch.set(docRef, object);
   });
   await batch.commit();
-  console.log('transaction done');
+  //console.log('transaction done');
 }
 
 export const getCategoriesAndDocuments = async() => {
@@ -64,13 +64,15 @@ export const getCategoriesAndDocuments = async() => {
   const q = query(collectionRef);
 
   const querySnapShot = await getDocs(q);
+  return querySnapShot.docs.map(docSnapshot => docSnapshot.data());
+  /*
   const categoryMap = querySnapShot.docs.reduce((acc, docSnapshot) => {
     const { title, items } = docSnapshot.data();
     acc[title.toLowerCase()] = items;
     return acc;
   }, {});
-
   return categoryMap;  
+  */
 }
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInfo={}) => {

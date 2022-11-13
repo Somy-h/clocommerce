@@ -28,7 +28,7 @@ function App() {
   }, []);
   
   return (
-    <Routes>
+    <Routes>  
       <Route path='/' element={ <Navigation /> }>
         <Route index element={ <Home /> } />
         <Route path='shop/*' element={ <Shop /> } />
