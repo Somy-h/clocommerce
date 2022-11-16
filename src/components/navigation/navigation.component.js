@@ -6,11 +6,12 @@ import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 //import { UserContext } from '../../contexts/user.context';
 import { selectCurrentUser } from '../../store/user/user.selector';
 //import { CartContext} from '../../contexts/cart.context'
-import { signOutUser} from '../../utils/firebase/firebase.utils'
-import CartIcon from '../cart-icon/cart-icon.component'
+import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { setIsCartOpen } from '../../store/cart/cart.action';
-import { selectIsCartOpen } from '../../store/cart/cart.selector'
+import { selectIsCartOpen } from '../../store/cart/cart.selector';
+//import { signOutUser} from '../../utils/firebase/firebase.utils'
+import { signOutStart } from '../../store/user/user.action';
 
 export default function Navigation() {
 
@@ -25,6 +26,8 @@ export default function Navigation() {
   const cartClickHandler = () => {
     dispatch(setIsCartOpen (!isCartOpen));
   }
+
+  const signOutUser = () => dispatch(signOutStart());
 
   return (
     <Fragment>
