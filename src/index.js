@@ -10,6 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 //import { CategoriesProvider } from './contexts/categories.context'
 //import { CartProvider } from './contexts/cart.context';
 import './index.scss';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe/stripe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +19,9 @@ root.render(
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <BrowserRouter>
-          <App />
+          <Elements stripe={stripePromise}>
+            <App />
+          </Elements>
         </BrowserRouter>
       </PersistGate>
     </Provider>

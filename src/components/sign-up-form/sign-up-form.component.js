@@ -22,6 +22,8 @@ export default function SignUpForm() {
   const [formData, setFormData] = useState(defaultFormData);
   const {displayName, email, password, confirmPassword} = formData;
 
+  const dispatch = useDispatch();
+  
   const resetFormData = () => {
     setFormData(defaultFormData);
   }

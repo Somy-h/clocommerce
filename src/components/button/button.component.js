@@ -1,6 +1,6 @@
 import './button.styles.scss';
 
-const BUTTON_TYPE = {
+export const BUTTON_TYPE = {
   google: 'google-sign-in',
   inverted: 'inverted'
 };
@@ -8,14 +8,18 @@ const BUTTON_TYPE = {
 const Button = ({
   children,
   buttonType,
+  isLoading = false,
   ...otherProps
 }) => {
+
+  const spinner = <div className='spinner-container'></div>;
+
   return (
     <button
       className={`button-container ${BUTTON_TYPE[buttonType]}`}
       {...otherProps}
     >
-      {children}
+      {isLoading ? spinner : children}
     </button>
   )
 };
